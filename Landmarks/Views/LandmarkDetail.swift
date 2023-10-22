@@ -22,7 +22,7 @@ struct LandmarkDetail: View {
             
             VStack(alignment: .leading) {
                 Text(landmark.name)
-                    .font(.title)
+                    .font(.largeTitle)
                 
                 HStack {
                     Text(landmark.park)
