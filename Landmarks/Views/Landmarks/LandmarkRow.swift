@@ -17,22 +17,21 @@ struct LandmarkRow: View {
                 .resizable()
                 .frame(width: 60, height: 60)
             Text(landmark.name)
+            
             Spacer()
+            
+            if landmark.isFavorite {
+                Image(systemName: "star.fill")
+                    .foregroundColor(.yellow)
+            }
         }
     }
 }
 
 #Preview {
-    Group {
+    let landmarks = ModelData().landmarks
+    return Group {
         LandmarkRow(landmark: landmarks[0])
         LandmarkRow(landmark: landmarks[1])
-    }
-}
-#Preview("second") {
-    Group {
-        LandmarkRow(landmark: landmarks[5])
-        LandmarkRow(landmark: landmarks[4])
-        LandmarkRow(landmark: landmarks[3])
-        LandmarkRow(landmark: landmarks[2])
     }
 }
